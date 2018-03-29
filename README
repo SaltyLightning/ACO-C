@@ -1,0 +1,29 @@
+Files
+-----
+
+Makefile: make an executable (main) and test on the maximum clique instance defined by the file C500.9.clq
+ant.c, graph.c, main.c, random.c, statistics.c: source files
+C500.9.clq: example of graph
+README: this file
+
+Usage
+-----
+
+AntClique may be used with the following arguments:
+-a (alpha: int) 
+-B (size of the maximum clique: int) 
+-r (rho: float) 
+-c (max number of cycle: int) 
+-n (nb ants: int) 
+-m (tau min: float) 
+-M (tau max: float) 
+-i (DIMACS graph filename) 
+-v display-frequency 
+-p (mustRepair set to 1)] 
+-s (seed: positive int) 
+-t (mode: v if AntClique(Vertex); c if AntClique(Clique))
+
+Graph format
+------------
+
+The graph must be defined wrt to the DIMACS format.
