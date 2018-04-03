@@ -38,7 +38,6 @@ int choose(float *p, int nbCand){
 int walkV(int alpha, int* clique, int firstVertex, graph* G) {
 	// input: a graph G, an initial vertex firstVertex, and a parameter alpha
 	// output: clique built in a greedy randomized way wrt strategy vertex, starting from initial vertex
-	
 	int i, v;
 	int candidates[G->nbVertices];
 	int nbCandidates;
@@ -73,6 +72,8 @@ int walkV(int alpha, int* clique, int firstVertex, graph* G) {
 			if ( isEdge(v, candidates[i], G) ) {
 				// Candidates[i] is still a candidate -> compute p
 				p[i] = myPow(G->tauV[candidates[i]], alpha)+total;
+				if (G->tauV[candidates[i]] > G->tauM)
+					G->tauM = G->tauV[candidates[i]];
 				total = p[i];
 				i++;
 			}
@@ -90,7 +91,6 @@ int walkE(int alpha, int* clique, int firstVertex, graph* G) {
 	// input: a graph G, an initial vertex firstVertex, and a parameter alpha
 	// output: clique built in a greedy randomized way wrt strategy clique, starting from initial vertex
 	// returns the size of clique
-	
 	int i, v;
 	int candidates[G->degree[firstVertex]];
 	int nbCandidates;
@@ -127,6 +127,10 @@ int walkE(int alpha, int* clique, int firstVertex, graph* G) {
 			if ( isEdge(v, candidates[i], G) ) {
 				// Candidates[i] is still a candidate -> compute p
 				tauClique[candidates[i]] += (G->tauE)[v][candidates[i]];
+				// update maximum phero for pso
+				if (tauClique[candidates[i]] > G->tauM)
+					G->tauM = tauClique[candidates[i]];
+				//printf("G->tauM = %f\n", G->tauM);
 				p[i] = myPow(tauClique[candidates[i]], alpha)+total;
 				total = p[i];
 				i++;

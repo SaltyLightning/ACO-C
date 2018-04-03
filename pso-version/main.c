@@ -79,7 +79,8 @@ int main (int argc, char *argv[]) {
 	char mode = 'v';		// 'v' for vertex strategy; 'c' for clique strategy
 	
 	clock_t tClock=clock();	// starting time
-	
+	float totalTime = 0;	// the total running time of the algorithm
+
 	// get parameters
 	if( parse(&alpha, 
 			  &best, 
@@ -118,12 +119,14 @@ int main (int argc, char *argv[]) {
 	int currentClique[G.nbVertices];
 	int bestCliqueCycleSize;
 	int bestCliqueCycle[G.nbVertices];
+	float currentCliquePhero = 0;
+	float bestCliquePhero = 0;
 	int nbRepair = 0;
-	float qty;
+	float qty = 0;
 	int i, j;
 	int nbIter = 0;
 	int nbCycles;
-	
+	float c1, c2, c3;
 	// start the solution process
 	if (verbose==1) 
 		printf("Starting solution process\n");
@@ -141,6 +144,12 @@ int main (int argc, char *argv[]) {
 				bestCliqueCycleSize = currentCliqueSize;
 			}
 		}
+		currentCliquePhero = G.tauM;
+		if (currentClique == bestClique)
+			bestCliquePhero = currentCliquePhero;
+		if (verbose == 1)
+		//	printf("Best clique pheromone: %f current clique pheromone: %f\n",
+	//			bestCliquePhero, currentCliquePhero);
 		if ((mustRepair==1) && (bestCliqueCycleSize<best)) 
 			// repair the best clique of the cycle
 			nbRepair += repair(bestCliqueCycle,&bestCliqueCycleSize,&G);
@@ -163,20 +172,30 @@ int main (int argc, char *argv[]) {
 		}
 		// Pheromone updating step
 		evaporate(1-rho,tauMin,&G);
-		qty = 1.0/(float)(bestCliqueSize + 1 - bestCliqueCycleSize);
+
+		c1 = c2 = c3 = 0.33333333/(float)(bestCliqueSize + 1 - bestCliqueCycleSize);
+		float qtyB = qty;
+		qty = (c1 * (getR())) * (bestCliquePhero) + 
+		(c2 * (getR())) * (currentCliquePhero) + c3 * (qty);
 		reinforce(bestCliqueCycle,bestCliqueCycleSize, qty, tauMax, &G);
+		float currentTime = (float)((clock()-tClock)/CLOCKS_PER_SEC);
+		totalTime += currentTime;
 		// Display
 		if((verbose==1) && ((nbCycles+1) % displayFreq == 0)) {
 			printf("Statistics at cycle %d : ", nbCycles+1);
-			printf("CPU time=%f ",(float)(clock()-tClock)/CLOCKS_PER_SEC);
+			printf("CPU time=%f ", currentTime);
 			printf("Number of LS moves=%d ",nbRepair);
 			printf("Average clique size=%f ",getAverageSize(&S));
 			printf("Average similarity=%f ",getSimilarity(&S));
 			printf("Number of resamplings=%d\n",getNbConflicts(&S));
+			printf("qty before = %f\tqty after = %f\n", qty, qtyB);
+			printf("default qty = %f\n", 1.0/(float)(bestCliqueSize + 1 - bestCliqueCycleSize));
 			reset(&S);
 		}
 	}
 	displayClique(bestCliqueSize, bestClique);
+	if (verbose == 1)
+		printf("Total running time of the algorithm: %f \n", totalTime);
 	return(0);
 }
 

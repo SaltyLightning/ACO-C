@@ -5,6 +5,7 @@ typedef struct{
 	int mode;		// 'c' if strategy is clique; 'v' otherwise
 	float* tauV;	// pheromone matrix used when mode='v'
 	float** tauE;	// pheromone matrix used when mode='c'
+	float tauM;		// the maximum pheromone currently found in the graph
 	int nbVertices;	// number of vertices in the graph
 	int nbEdges;	// number of edges in the graph
 	int* degree;	// forall i in 0..nbVertices-1, degree[i] = degree of ith vertex
@@ -101,6 +102,7 @@ void initPhero(int m, float tauMax, graph* G){
 	// Initialize pheromone trails to tauMax and initialize mode to m
 	int i, j;
 	G->mode = m;
+	G->tauM = 0;
 	if (m=='v'){
 		G->tauV = (float*)calloc(G->nbVertices,sizeof(float));
 		for (i=0; i<G->nbVertices; i++) G->tauV[i] = tauMax;

@@ -29,3 +29,8 @@ int getNextRand(int limit) {
 void seed(unsigned int seed){
 	iseed = seed;
 }
+
+/**************************/
+double getR(){
+	return (double)rand() / (double)RAND_MAX ;
+}

@@ -79,7 +79,8 @@ int main (int argc, char *argv[]) {
 	char mode = 'v';		// 'v' for vertex strategy; 'c' for clique strategy
 	
 	clock_t tClock=clock();	// starting time
-	
+	float totalTime = 0;	// the total running time of the algorithm
+
 	// get parameters
 	if( parse(&alpha, 
 			  &best, 
@@ -165,18 +166,22 @@ int main (int argc, char *argv[]) {
 		evaporate(1-rho,tauMin,&G);
 		qty = 1.0/(float)(bestCliqueSize + 1 - bestCliqueCycleSize);
 		reinforce(bestCliqueCycle,bestCliqueCycleSize, qty, tauMax, &G);
+		float currentTime = (float)((clock()-tClock)/CLOCKS_PER_SEC);
+		totalTime += currentTime;
 		// Display
 		if((verbose==1) && ((nbCycles+1) % displayFreq == 0)) {
 			printf("Statistics at cycle %d : ", nbCycles+1);
-			printf("CPU time=%f ",(float)(clock()-tClock)/CLOCKS_PER_SEC);
+			printf("CPU time=%f ",currentTime);
 			printf("Number of LS moves=%d ",nbRepair);
 			printf("Average clique size=%f ",getAverageSize(&S));
 			printf("Average similarity=%f ",getSimilarity(&S));
 			printf("Number of resamplings=%d\n",getNbConflicts(&S));
+			printf("default qty = %f\n", 1.0/(float)(bestCliqueSize + 1 - bestCliqueCycleSize));
 			reset(&S);
 		}
 	}
 	displayClique(bestCliqueSize, bestClique);
+
 	return(0);
 }
 
