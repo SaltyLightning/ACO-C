@@ -1,2 +1,2 @@
 all:
-	gcc -Wall -pedantic graphg.c -o g
+	gcc -DDEBUG -g -Wall -pedantic -DEBUG graphg.c -o g

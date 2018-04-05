@@ -1,4 +1,4 @@
-CFLAGS = -O3 -Wall -fstrict-aliasing -std=c99
+CFLAGS = -O3 -Wall -fstrict-aliasing -std=c99 -DEBUG -g
 
 test:main
 	./main -i C500.9.clq -B 57
