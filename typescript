@@ -1,0 +1,133 @@
+Script started on Tue 03 Apr 2018 08:27:19 AM PDT
+]0;x@ubuntu: ~/Documents/code/algorithms/ACO-C[01;32mx@ubuntu[00m:[01;34m~/Documents/code/algorithms/ACO-C[00m$ make
+cc -O3 -Wall -fstrict-aliasing -std=c99 main.c -o main
+[01m[Kmain.c:[m[K In function ‘[01m[Kparse[m[K’:
+[01m[Kmain.c:40:16:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Kgetopt[m[K’ [-Wimplicit-function-declaration]
+  while ( (ch = getopt(argc, argv, "a:B:r:p:c:n:m:M:v:i:?:h:s:t:"))!=-1 ) {
+[01;32m[K                ^[m[K
+In file included from [01m[Kmain.c:9:0[m[K:
+[01m[Kant.c:[m[K In function ‘[01m[Kchoose[m[K’:
+[01m[Kant.c:25:6:[m[K [01;35m[Kwarning: [m[K‘[01m[Kk[m[K’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  int k;
+[01;32m[K      ^[m[K
+./main -i C500.9.clq -B 57
+Params: alpha=1 best=57 rho=0.010000 tauMin=0.010000 tauMax=6.000000 nbCycles=3000 nbAnts=30 verbose=1(200) input=C500.9.clq mustRepair=1 seed=3 mode=v
+Graph: 500 vertices and 112332 edges
+Pheromone trails initialized to 6.000000
+Starting solution process
+Best clique size = 47 at cycle 0 (0.248583 seconds)
+Best clique size = 50 at cycle 1 (0.256886 seconds)
+Best clique size = 51 at cycle 149 (0.847551 seconds)
+Statistics at cycle 200 : CPU time=1.000000 Number of LS moves=619 Average clique size=39.166832 Average similarity=0.098400 Number of resamplings=0
+default qty = 0.111111
+Best clique size = 52 at cycle 279 (1.372791 seconds)
+Statistics at cycle 400 : CPU time=1.000000 Number of LS moves=1234 Average clique size=40.910831 Average similarity=0.156636 Number of resamplings=0
+default qty = 0.333333
+Best clique size = 53 at cycle 534 (2.394539 seconds)
+Statistics at cycle 600 : CPU time=2.000000 Number of LS moves=1792 Average clique size=42.038502 Average similarity=0.215003 Number of resamplings=0
+default qty = 0.142857
+Best clique size = 54 at cycle 652 (2.868723 seconds)
+Statistics at cycle 800 : CPU time=3.000000 Number of LS moves=2272 Average clique size=43.198334 Average similarity=0.283747 Number of resamplings=0
+default qty = 0.200000
+Best clique size = 55 at cycle 810 (3.491579 seconds)
+Statistics at cycle 1000 : CPU time=4.000000 Number of LS moves=2739 Average clique size=44.415501 Average similarity=0.361425 Number of resamplings=0
+default qty = 0.333333
+Best clique size = 56 at cycle 1152 (4.855267 seconds)
+Statistics at cycle 1200 : CPU time=5.000000 Number of LS moves=3116 Average clique size=46.168667 Average similarity=0.461009 Number of resamplings=0
+default qty = 0.200000
+Statistics at cycle 1400 : CPU time=5.000000 Number of LS moves=3423 Average clique size=47.579834 Average similarity=0.535055 Number of resamplings=0
+default qty = 0.250000
+Statistics at cycle 1600 : CPU time=6.000000 Number of LS moves=3673 Average clique size=48.168499 Average similarity=0.565685 Number of resamplings=0
+default qty = 0.333333
+Statistics at cycle 1800 : CPU time=7.000000 Number of LS moves=3931 Average clique size=48.388000 Average similarity=0.577415 Number of resamplings=0
+default qty = 0.333333
+Statistics at cycle 2000 : CPU time=8.000000 Number of LS moves=4182 Average clique size=48.548832 Average similarity=0.588319 Number of resamplings=1
+default qty = 1.000000
+Best clique size = 57 at cycle 2000 (8.140755 seconds)
+--------------------
+Clique list dump:
+	- clique size: 57 vertices
+	- clique list: 13 22 45 55 58 67 74 76 84 97 103 108 119 120 159 161 164 182 183 188 189 196 222 224 231 236 240 244 260 286 294 300 319 336 339 360 367 383 385 388 407 411 413 415 418 432 433 439 448 451 453 455 462 467 468 480 493 
+--------------------
+]0;x@ubuntu: ~/Documents/code/algorithms/ACO-C[01;32mx@ubuntu[00m:[01;34m~/Documents/code/algorithms/ACO-C[00m$ cd 
+Debug/       .git/        pso-version/ .vs/         
+]0;x@ubuntu: ~/Documents/code/algorithms/ACO-C[01;32mx@ubuntu[00m:[01;34m~/Documents/code/algorithms/ACO-C[00m$ cd pso-version/
+]0;x@ubuntu: ~/Documents/code/algorithms/ACO-C/pso-version[01;32mx@ubuntu[00m:[01;34m~/Documents/code/algorithms/ACO-C/pso-version[00m$ make
+cc -O3 -Wall -fstrict-aliasing -std=c99 main.c -o main
+[01m[Kmain.c:[m[K In function ‘[01m[Kparse[m[K’:
+[01m[Kmain.c:40:16:[m[K [01;35m[Kwarning: [m[Kimplicit declaration of function ‘[01m[Kgetopt[m[K’ [-Wimplicit-function-declaration]
+  while ( (ch = getopt(argc, argv, "a:B:r:p:c:n:m:M:v:i:?:h:s:t:"))!=-1 ) {
+[01;32m[K                ^[m[K
+In file included from [01m[Kmain.c:9:0[m[K:
+[01m[Kant.c:[m[K In function ‘[01m[Kchoose[m[K’:
+[01m[Kant.c:25:6:[m[K [01;35m[Kwarning: [m[K‘[01m[Kk[m[K’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+  int k;
+[01;32m[K      ^[m[K
+./main -i C500.9.clq -B 57
+Params: alpha=1 best=57 rho=0.010000 tauMin=0.010000 tauMax=6.000000 nbCycles=3000 nbAnts=30 verbose=1(200) input=C500.9.clq mustRepair=1 seed=3 mode=v
+Graph: 500 vertices and 112332 edges
+Pheromone trails initialized to 6.000000
+Starting solution process
+Best clique size = 47 at cycle 0 (0.217749 seconds)
+Best clique size = 50 at cycle 1 (0.226509 seconds)
+Best clique size = 51 at cycle 102 (0.649122 seconds)
+Statistics at cycle 200 : CPU time=1.000000 Number of LS moves=619 Average clique size=39.127998 Average similarity=0.097998 Number of resamplings=0
+qty before = 0.141384	qty after = 0.313712
+default qty = 0.142857
+Best clique size = 52 at cycle 274 (1.383105 seconds)
+Best clique size = 53 at cycle 386 (1.861285 seconds)
+Statistics at cycle 400 : CPU time=1.000000 Number of LS moves=1246 Average clique size=40.655998 Average similarity=0.146386 Number of resamplings=0
+qty before = 0.502380	qty after = 0.493132
+default qty = 0.250000
+Statistics at cycle 600 : CPU time=2.000000 Number of LS moves=1771 Average clique size=42.121334 Average similarity=0.217501 Number of resamplings=0
+qty before = 0.243644	qty after = 0.135436
+default qty = 0.200000
+Best clique size = 54 at cycle 634 (2.901762 seconds)
+Best clique size = 55 at cycle 671 (3.061566 seconds)
+Best clique size = 56 at cycle 795 (3.597417 seconds)
+Statistics at cycle 800 : CPU time=3.000000 Number of LS moves=2259 Average clique size=43.552334 Average similarity=0.302610 Number of resamplings=0
+qty before = 0.368220	qty after = 0.118097
+default qty = 0.333333
+Statistics at cycle 1000 : CPU time=4.000000 Number of LS moves=2690 Average clique size=45.639500 Average similarity=0.421458 Number of resamplings=0
+qty before = 0.475805	qty after = 0.216313
+default qty = 0.333333
+Statistics at cycle 1200 : CPU time=5.000000 Number of LS moves=3022 Average clique size=47.589169 Average similarity=0.524524 Number of resamplings=0
+qty before = 0.638920	qty after = 0.711679
+default qty = 1.000000
+Statistics at cycle 1400 : CPU time=6.000000 Number of LS moves=3279 Average clique size=48.694332 Average similarity=0.577505 Number of resamplings=0
+qty before = 0.789501	qty after = 1.038984
+default qty = 1.000000
+Statistics at cycle 1600 : CPU time=6.000000 Number of LS moves=3505 Average clique size=49.055832 Average similarity=0.599087 Number of resamplings=0
+qty before = 0.375905	qty after = 0.612604
+default qty = 1.000000
+Statistics at cycle 1800 : CPU time=7.000000 Number of LS moves=3751 Average clique size=49.295502 Average similarity=0.614660 Number of resamplings=1
+qty before = 0.250558	qty after = 0.602912
+default qty = 0.333333
+Statistics at cycle 2000 : CPU time=8.000000 Number of LS moves=3949 Average clique size=49.564167 Average similarity=0.627187 Number of resamplings=3
+qty before = 0.697384	qty after = 0.655318
+default qty = 0.333333
+Statistics at cycle 2200 : CPU time=9.000000 Number of LS moves=4137 Average clique size=49.831165 Average similarity=0.646575 Number of resamplings=4
+qty before = 0.567185	qty after = 1.148089
+default qty = 0.500000
+Statistics at cycle 2400 : CPU time=10.000000 Number of LS moves=4313 Average clique size=49.944332 Average similarity=0.648357 Number of resamplings=9
+qty before = 1.089331	qty after = 0.515731
+default qty = 1.000000
+Statistics at cycle 2600 : CPU time=11.000000 Number of LS moves=4504 Average clique size=49.943832 Average similarity=0.647956 Number of resamplings=17
+qty before = 1.294880	qty after = 0.567706
+default qty = 1.000000
+Statistics at cycle 2800 : CPU time=11.000000 Number of LS moves=4689 Average clique size=49.893501 Average similarity=0.647571 Number of resamplings=25
+qty before = 0.575318	qty after = 1.371342
+default qty = 0.333333
+Statistics at cycle 3000 : CPU time=12.000000 Number of LS moves=4895 Average clique size=49.647835 Average similarity=0.636396 Number of resamplings=32
+qty before = 0.591739	qty after = 0.635274
+default qty = 0.500000
+--------------------
+Clique list dump:
+	- clique size: 56 vertices
+	- clique list: 6 21 22 44 46 68 87 92 97 110 114 121 134 137 140 145 147 148 149 160 169 181 182 207 212 223 231 238 244 245 268 284 290 291 305 312 319 326 364 381 398 404 405 411 415 427 442 447 451 454 467 484 488 490 491 493 
+--------------------
+Total running time of the algorithm: 18113.000000 
+]0;x@ubuntu: ~/Documents/code/algorithms/ACO-C/pso-version[01;32mx@ubuntu[00m:[01;34m~/Documents/code/algorithms/ACO-C/pso-version[00m$ exit
+exit
+
+Script done on Tue 03 Apr 2018 08:28:50 AM PDT
