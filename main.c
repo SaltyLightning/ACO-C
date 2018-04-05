@@ -159,6 +159,7 @@ int main (int argc, char *argv[]) {
 			printf("Best clique size = %d at cycle %d (%f seconds)\n", bestCliqueSize, nbCycles, (float)(clock()-tClock)/CLOCKS_PER_SEC);
 			if (bestCliqueSize >= best){
 				displayClique(bestCliqueSize, bestClique);
+				printf("Total Time spent: %f\n", totalTime);
 				return 0;
 			}
 		}
@@ -181,6 +182,7 @@ int main (int argc, char *argv[]) {
 		}
 	}
 	displayClique(bestCliqueSize, bestClique);
+	printf("Total Time spent: %f\n", totalTime);
 
 	return(0);
 }

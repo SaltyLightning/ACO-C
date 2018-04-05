@@ -173,7 +173,8 @@ int main (int argc, char *argv[]) {
 		// Pheromone updating step
 		evaporate(1-rho,tauMin,&G);
 
-		c1 = c2 = c3 = 0.33333333/(float)(bestCliqueSize + 1 - bestCliqueCycleSize);
+		c1 = c2 = c3 = (0.5/(float)(bestCliqueSize + 1 - bestCliqueCycleSize));
+		c1 = c2 = c3 = .09;
 		float qtyB = qty;
 		qty = (c1 * (getR())) * (bestCliquePhero) + 
 		(c2 * (getR())) * (currentCliquePhero) + c3 * (qty);
