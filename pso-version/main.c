@@ -69,7 +69,7 @@ int main (int argc, char *argv[]) {
 	int displayFreq = 200;  // display frequency when verbose = 1
 	int alpha = 1;          // pheromone factor weight
 	int best = 10000;		// bound on the size of the maximum clique
-	float rho = 0.01;		// persistence rate
+	float rho = 0.95;		// persistence rate
 	int maxCycles = 3000;	// maximum number of cycles
 	int nbAnts = 30;		// number of ants
 	float tauMin = 0.01;	// minimum bound on pheromone trails
@@ -173,8 +173,8 @@ int main (int argc, char *argv[]) {
 		// Pheromone updating step
 		evaporate(1-rho,tauMin,&G);
 
-		c1 = c2 = c3 = (0.5/(float)(bestCliqueSize + 1 - bestCliqueCycleSize));
-		c1 = c2 = c3 = .09;
+		c1 = c2 = 0.3;
+		c3 = 1 - c2;
 		float qtyB = qty;
 		qty = (c1 * (getR())) * (bestCliquePhero) + 
 		(c2 * (getR())) * (currentCliquePhero) + c3 * (qty);
